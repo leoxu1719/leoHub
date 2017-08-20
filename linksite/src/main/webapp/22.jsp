@@ -1,0 +1,53 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0,  maximum-scale=1.0,minimal-ui">
+<title>日期测试</title>
+	
+<script type="text/javascript" src="js/lib.min.js"></script>
+<link type="text/css" rel="stylesheet" href="css/touchdate.css">
+<script type="text/javascript" src="js/touchdate.js"></script>
+</head>
+<body>
+<div class="float_left pointer" id="mChangeDate" style="height: 25px;line-height: 25px;padding-left:12px;fong-size:14px;">
+		<span id="ds_date" class="font_14" data-jcvalue="2017-05-26">2016-10-18 今天</span>
+		<input id="xx" type="hidden" data-jcvalue="2017-05-26"/>
+</div>
+<div id="show_datePicker"></div>
+<script>
+
+// 日期选择控件,展示的日期
+var ds_date = $("#xx");
+// 日期参数设置
+var datepickparam = {
+	defaultvalue:ds_date.attr("data-jcvalue"),
+	inline: true,
+	showBody: $("#show_datePicker"),
+	onchange : function(datestrt){
+		var dateinfo = $.getdatedesc(datestrt, 0);
+		ds_date.textes(dateinfo[0] + " " + dateinfo[1]).attr("data-jcvalue",datestrt);
+	},
+	markArray : [{date:"2017-05-21",msg:"班",color:""},{date:"2017-05-22",msg:"班",color:""},{date:"2017-05-23",msg:"班",color:""}],
+};
+
+var mDatePicker;
+mChangeDate.tap(function() {
+	if(!mDatePicker){
+		mDatePicker = new $.touchDate(datepickparam);
+	}
+	mDatePicker.show(true);
+});
+
+
+$(function() {
+		if (!mDatePicker) {
+			mDatePicker = new $.touchDate(datepickparam);
+		}
+		mDatePicker.show(true);
+});
+
+</script>
+
+</body></html>

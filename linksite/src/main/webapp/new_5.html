@@ -1,0 +1,50 @@
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0,  maximum-scale=1.0,minimal-ui">
+<title>日期测试</title>
+	
+<script type="text/javascript" src="lib.min.js"></script>
+<link type="text/css" rel="stylesheet" href="touchdate.css">
+<script type="text/javascript" src="touchdate.js"></script>
+</head>
+<body>
+<div class="float_left pointer" id="mChangeDate" style="height: 25px;line-height: 25px;padding-left:12px;fong-size:14px;">
+		<span id="ds_date" class="font_14"  data-jcvalue="2016-10-18">2016-10-18 今天</span>
+</div>
+<div id="show_datePicker"></div>
+<script>
+
+// 日期选择控件,展示的日期
+var ds_date = $("#ds_date");
+// 日期参数设置
+var datepickparam = {
+	defaultvalue:ds_date.attr("data-jcvalue"),
+	limitend : new Date(),
+	inline: true,
+	showBody: $("#show_datePicker"),
+	onchange : function(datestrt){
+		var dateinfo = $.getdatedesc(datestrt, 0);
+		ds_date.textes(dateinfo[0] + " " + dateinfo[1]).attr("data-jcvalue",datestrt);
+	},
+	markArray : [{date:"2016-10-18",msg:"班",color:"#333"},{date:"2016-10-10",msg:"休",color:""},{date:"2016-10-01",msg:"未打卡",color:"red"}],
+};
+
+var mDatePicker;
+mChangeDate.tap(function() {
+	if(!mDatePicker){
+		mDatePicker = new $.touchDate(datepickparam);
+	}
+	mDatePicker.show(true);
+});
+
+
+$(function() {
+	if (!mDatePicker) {
+		mDatePicker = new $.touchDate(datepickparam);
+	}
+	mDatePicker.show(true);
+});
+
+</script>
+
+</body></html>

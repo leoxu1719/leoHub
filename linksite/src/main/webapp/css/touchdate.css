@@ -1,0 +1,217 @@
+.table{border-collapse:collapse}
+*{margin:0;padding:0;-webkit-text-size-adjust:none;-moz-text-size-adjust:none;-ms-text-size-adjust:none;text-size-adjust:none;}
+button,input,div,ul,li,span{-webkit-tap-highlight-color:transparent}
+img{border:none}
+li{list-style-type:none}
+a{text-decoration:none}
+input::-ms-clear{display:none}
+button,input,select,textarea{border-radius:0;-webkit-appearance:none;outline:0;resize:none;border:none}
+.font_12{font-size:12px}
+
+.flexbox {
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	box-sizing: content-box;
+}
+
+.col_woolmain {
+	color: #FE8C47;
+}
+
+.flexboxitem,.wooltouch_week li {
+	-webkit-flex-shrink: 0;
+	-ms-flex: 0 0 auto;
+	flex-shrink: 0;
+	box-sizing: border-box;
+}
+.wool_touchguide,.wooldateback,.wooldateFrame{
+	top: 0;
+	left: 0;
+	width: 100%;
+	position: fixed;
+}
+.wool_touchguidedesc{
+	margin-top: 180px;
+	text-align: center;
+}
+.wool_touchguidebutton{
+	position:absolute;
+	width: 100px;
+	line-height: 30px;
+	border-radius:15px 0 15px 0;
+	border: 1px solid white;
+	color: white;
+	text-align: center;
+	left: 50%;
+	bottom: 30px;
+	margin-left: -50px;
+}
+.wool_touchguide{
+	height: 100%;
+	z-index: 101;
+	background-color: rgba(0,0,0,0.6);
+	display: none;
+	color: white;
+}
+.wooldateback {
+	height: 100%;
+	z-index: 99;
+	display: none;
+	background-color: #1C1C1F;
+	opacity: 0;
+}
+
+.wooldateFrame {
+	z-index: 100;
+	display: none;
+	transform: translateY(-100%);
+	-webkit-transform: translateY(-100%);
+	background-color: white;
+	opacity: 0;
+}
+
+.woolcontainer {
+	overflow: hidden;
+}
+
+/**月份切换工具栏*/
+.wooltouch_tool:after {
+	content: "";
+	border-bottom:1px solid #FE8C47;
+	-webkit-transform:scaleY(0.5);
+	width: 100%;
+    transform-origin: 0 0;
+	position: absolute;
+	bottom:0;
+	left: 0;	
+}
+.wooltouch_tool {
+	line-height: 40px;
+	color: #FE8C47;
+	font-weight: bold;
+	position: relative;
+}
+
+.wooltouch_previousmonth,.wooltouch_nextmonth {
+	width: 33%;
+	box-sizing: border-box;
+}
+
+.wooltouch_previousmonth {
+	padding-left: 10px;
+}
+
+.wooltouch_nextmonth {
+	text-align: right;
+	padding-right: 10px;
+}
+
+.wooltouch_curmonth {
+	width: 34%;
+	text-align: center;
+}
+
+/**月份切换工具栏end*/ /**星期栏*/
+.wooltouch_week {
+	line-height: 30px;
+	color: #A5A4A4;
+}
+
+.wooltouch_week li {
+	width: calc(100%/ 7);
+	width: -webkit-calc(100%/ 7);
+	text-align: center;
+}
+
+.wooltouch_week li:nth-child (1),.wooltouch_week li:nth-child (7){
+	color: #FE8C47;
+}
+
+/**星期栏end*/ /**月份栏*/
+.wooltouch_months ul {
+	background-color: red;
+	border-right: 1px solid #FE8C47;
+}
+.wooltouch_week li:nth-child(1),.wooltouch_week li:nth-child(7){
+	color: #FE8C47;
+}
+.wooltouch_month {
+	width: 100%;
+}
+
+.wooltouch_move {
+	width: 100%;
+}
+
+.wooltouch_month td {
+	height: 45px;
+	border: 1px solid white;
+	box-sizing: border-box;
+	width: calc(100%/ 7);
+	width: -webkit-calc(100%/ 7);
+	text-align: center;
+	background-color: #f1f1f1;
+	position: relative;
+}
+
+.wooltouch_month td:nth-child(7){
+	border-right: none!important;
+}
+
+.wool_mark_holiday {
+	font-size: 9px;
+	color:#FE8C47;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	text-align: center;
+	line-height: 14px;
+	width: 100%;
+}
+
+.wool_mark_bj_day {
+	font-size: 9px;
+	color:#FE8C47;
+	position: absolute;
+	right: 3px;
+	bottom: 3px;
+	text-align: center;
+	line-height: 14px;
+	font-weight: normal;
+}
+
+.wool_disabled {
+	background-color: #f7f7f7 !important;
+	color: #ADABAB;
+}
+
+.wool_today {
+	color: #FE8C47;
+	font-weight: bold;
+	font-size: 12px;
+}
+
+.wool_mark_ticket,.wool_mark_sale {
+	background-repeat: no-repeat;
+	background-position: right bottom;
+	background-size: 20px 20px;
+}
+
+.wool_selected {
+	background-color: #3399FF !important;
+	color: white;
+}
+
+/**触摸的颜色*/
+.wool_ontouch {
+	background-color:black!important;
+	color:white!important;
+}
+/**月份栏end*/
